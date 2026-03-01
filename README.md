@@ -4,8 +4,7 @@ SHARP is a network- and transcriptomics-based framework for drug prioritization.
 
 ## Installation
 
-```bash
-pip install sharp-aging
+pip install git+https://github.com/BnayaGross/sharp-aging.git
 
 ## Quick example
 
