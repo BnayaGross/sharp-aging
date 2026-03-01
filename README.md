@@ -20,4 +20,9 @@ CRISPR perturbations, or LINCS/CMap profiles.
 ## Citation
 
 If you use SHARP, please cite:
-Gross, B., Ehlert, J., Gladyshev, V. N., Loscalzo, J., & Barabási, A. L. (2025). Network-driven discovery of repurposable drugs targeting hallmarks of aging. ArXiv, arXiv-2509.‏
+Gross, B., Ehlert, J., Gladyshev, V. N., Loscalzo, J., & Barabási, A. L. (2025). Network-driven discovery of repurposable drugs targeting hallmarks of aging. ArXiv, arXiv-2509.
+
+## Original repo
+
+Full details and data can be found here:
+https://github.com/BnayaGross/Longevity-module‏
