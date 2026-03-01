@@ -14,13 +14,14 @@ aging_down = {6,7}
 D = dict(nx.all_pairs_shortest_path_length(G))
 
 res = sharp.run_sharp(
-    G,
-    disease,
-    targets,
-    expr,
-    aging_up,
-    aging_down,
-    D
+    graph=G,
+    disease_genes=disease,
+    drug_targets=targets,
+    drug_up=drug_up,
+    drug_down=drug_down,
+    aging_up=aging_up,
+    aging_down=aging_down,
+    distance_matrix=D
 )
 
 print(res)
