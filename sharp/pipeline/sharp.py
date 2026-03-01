@@ -6,11 +6,11 @@ def run_sharp(
     graph,
     disease_genes,
     drug_targets,
-    expression_signature,
+    drug_up,
+    drug_down,
     aging_up,
     aging_down,
     distance_matrix,
-    n_random=1000
 ):
 
     prox = proximity(
