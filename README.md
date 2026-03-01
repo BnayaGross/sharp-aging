@@ -1,3 +1,5 @@
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
 # SHARP
 
 SHARP is a network- and transcriptomics-based framework for drug prioritization.
