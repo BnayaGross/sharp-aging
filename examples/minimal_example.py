@@ -6,7 +6,8 @@ G = nx.karate_club_graph()
 disease = {0,1,2}
 targets = {10,11}
 
-expr = {3,4,5}
+drug_up = {3,4}
+drug_down = {5}
 aging_up = {3,4}
 aging_down = {6,7}
 
