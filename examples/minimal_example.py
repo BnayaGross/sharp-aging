@@ -1,18 +1,27 @@
 import sharp
 import networkx as nx
 
+# toy network
 G = nx.karate_club_graph()
 
-disease = {0,1,2}
-targets = {10,11}
+# disease genes
+disease = {0, 1, 2}
 
-drug_up = {3,4}
+# drug targets
+targets = {10, 11}
+
+# drug perturbation signature
+drug_up = {3, 4}
 drug_down = {5}
-aging_up = {3,4}
-aging_down = {6,7}
 
+# aging signature
+aging_up = {3, 6}
+aging_down = {4, 7}
+
+# distance matrix
 D = dict(nx.all_pairs_shortest_path_length(G))
 
+# run SHARP
 res = sharp.run_sharp(
     graph=G,
     disease_genes=disease,
@@ -21,7 +30,7 @@ res = sharp.run_sharp(
     drug_down=drug_down,
     aging_up=aging_up,
     aging_down=aging_down,
-    distance_matrix=D
+    distance_matrix=D,
 )
 
 print(res)
