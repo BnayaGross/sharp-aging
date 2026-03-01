@@ -8,7 +8,7 @@ from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 from sklearn.model_selection import KFold
 from statsmodels.stats.multitest import multipletests
 from statistics import mean, stdev
-from Diamond import DIAMOnD
+from sharp.core.diamond import DIAMOnD
 import random
 import xml.etree.ElementTree as ET
 import requests
