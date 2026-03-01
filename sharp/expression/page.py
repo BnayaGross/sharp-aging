@@ -1,26 +1,56 @@
 import numpy as np
-from scipy.stats import hypergeom
 
 
-def compute_page(signature, aging_up, aging_down, background_size):
+def compute_page(
+    drug_up,
+    drug_down,
+    aging_up,
+    aging_down,
+):
+    """
+    Compute raw pAGE alignment score.
 
-    signature = set(signature)
+    Returns a value in [-1, 1]:
 
-    up_overlap = len(signature & set(aging_up))
-    down_overlap = len(signature & set(aging_down))
+        +1  -> maximal reversal of aging signature
+         0  -> no relationship
+        -1  -> drug mimics aging
 
-    p_up = hypergeom.sf(
-        up_overlap - 1,
-        background_size,
-        len(aging_up),
-        len(signature)
+    Parameters
+    ----------
+    drug_up : iterable
+        Genes upregulated by drug
+    drug_down : iterable
+        Genes downregulated by drug
+    aging_up : iterable
+        Aging-up genes
+    aging_down : iterable
+        Aging-down genes
+    """
+
+    drug_up = set(drug_up)
+    drug_down = set(drug_down)
+    aging_up = set(aging_up)
+    aging_down = set(aging_down)
+
+    # --- reversal (desired effect) ---
+    reversal = (
+        len(drug_down & aging_up) +
+        len(drug_up & aging_down)
     )
 
-    p_down = hypergeom.sf(
-        down_overlap - 1,
-        background_size,
-        len(aging_down),
-        len(signature)
+    # --- reinforcement (undesired) ---
+    reinforcement = (
+        len(drug_up & aging_up) +
+        len(drug_down & aging_down)
     )
 
-    return -np.log10(p_up * p_down + 1e-300)
+    total = reversal + reinforcement
+
+    # avoid division by zero
+    if total == 0:
+        return 0.0
+
+    page_score = (reversal - reinforcement) / total
+
+    return float(page_score)
