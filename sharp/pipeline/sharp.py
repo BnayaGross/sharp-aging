@@ -11,6 +11,7 @@ def run_sharp(
     aging_up,
     aging_down,
     distance_matrix,
+    n_random=1000,
 ):
 
     prox = proximity(
