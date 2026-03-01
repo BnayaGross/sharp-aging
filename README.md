@@ -6,10 +6,9 @@ SHARP is a network- and transcriptomics-based framework for drug prioritization.
 
 pip install git+https://github.com/BnayaGross/sharp-aging.git
 
-## Quick example
+## Minimal example
 
-import sharp
-results = sharp.run_sharp(...)
+python examples/minimal_example.py
 
 
 ## Extensibility
