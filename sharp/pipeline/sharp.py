@@ -24,10 +24,10 @@ def run_sharp(
     proximity_score = prox["z_score"]
 
     page_score = compute_page(
-        expression_signature,
+        drug_up,
+        drug_down,
         aging_up,
-        aging_down,
-        len(graph.nodes)
+        aging_down
     )
 
 
