@@ -30,10 +30,8 @@ def run_sharp(
         len(graph.nodes)
     )
 
-    sharp_score = proximity_score * page_score
 
     return {
         "network_proximity_z": proximity_score,
         "pAGE_score": page_score,
-        "SHARP_score": sharp_score,
     }
