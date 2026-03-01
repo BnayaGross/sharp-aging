@@ -1,0 +1,20 @@
+[project]
+name = "sharp-aging"
+version = "0.1.0"
+description = "SHARP: Network and transcriptomics-based drug prioritization framework"
+authors = [{name="SHARP authors"}]
+
+dependencies = [
+    "numpy",
+    "pandas",
+    "networkx",
+    "scipy",
+    "scikit-learn",
+    "statsmodels",
+    "tqdm",
+    "biopython"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
