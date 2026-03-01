@@ -11,7 +11,7 @@ disease = {0, 1, 2}
 targets = {10, 11}
 
 # drug perturbation signature
-drug_up = {3, 4}
+drug_up = {3, 4, 7}
 drug_down = {5}
 
 # aging signature
